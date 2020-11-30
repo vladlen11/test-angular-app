@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../../../core/services/auth.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -15,9 +16,13 @@ export class LoginComponent implements OnInit {
         password: this.fb.control('', [Validators.required])
     });
 
+
+    formLoading: any = false;
+
     constructor(
         private authService: AuthService,
         private fb: FormBuilder,
+        private router: Router,
     ) {
     }
 
@@ -28,7 +33,15 @@ export class LoginComponent implements OnInit {
         const data: any = this.formGroup.getRawValue();
         console.log(data, 'data');
 
-        return this.authService.login(data);
+        this.authService.login(data).subscribe(
+            response => {
+                this.formGroup.reset();
+                this.router.navigateByUrl('/');
+                this.formLoading = false;
+            },
+            (response: any) => {
+                this.formLoading = false;
+            });
 
     }
 

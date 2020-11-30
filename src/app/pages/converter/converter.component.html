@@ -4,7 +4,7 @@
             <div class="converter__form-col">
                 <div class="input-label">
                     <label for="inputFrom">Currency from</label>
-                    <ng-select [items]="payway"
+                    <ng-select [items]="rates"
                                bindLabel="code"
                                bindValue="id"
                                [(ngModel)]="selectedCurrencyFrom"
@@ -21,6 +21,7 @@
                     <input type="text"
                            id="inputFrom"
                            name="inputFrom"
+                           (keypress)="numberOnly($event)"
                             [(ngModel)]="inputFrom"
                             (ngModelChange)="onInputChange(true)"
                     >
@@ -29,10 +30,11 @@
             <div class="converter__form-col">
                 <div class="input-label">
                     <label for="inputFrom">Currency to</label>
-                    <ng-select [items]="payway"
+                    <ng-select [items]="rates"
                                name="currencyTo"
                                bindLabel="code"
                                bindValue="id"
+
                                [(ngModel)]="selectedCurrencyTo"
                                (init)="selectCurrencyTo($event)"
                                (change)="selectCurrencyTo($event)"

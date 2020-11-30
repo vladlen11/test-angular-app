@@ -17,6 +17,6 @@ export class PaywayService {
     }
 
     getPayway(): Observable<any> {
-        return this.http.get(`https://devel.bitles.eu/api/front/payway`).pipe(map((response: any) => response.map(item => new PaywayModel (item))));
+        return this.http.get(`https://api.exchangeratesapi.io/latest?base=USD`).pipe(map((response: any) => response));
     }
 }

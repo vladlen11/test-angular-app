@@ -21,6 +21,10 @@
         <div class="lang">
             <app-lang></app-lang>
         </div>
+
+        <button mat-raised-button class="logout" *ngIf="authService.isSigned" (click)="logout()">
+            выйти
+        </button>
     </div>
 
 </header>

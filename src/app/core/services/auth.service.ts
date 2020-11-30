@@ -41,19 +41,52 @@ export class AuthService {
 
 
     login(params): Observable<any> {
-        console.log(params, 'login service');
         return this.http.post(`${this.apiUrl}/auth/login`, params).pipe(
             tap((authData: AuthData) => {
-                console.log(authData, 'authData service');
                 this.setAuthData(authData.token, authData.permissions);
                 this.router.navigateByUrl('/account').then();
             })
         );
     }
 
+
+    logout(params = true) {
+        this.http.post(`${this.apiUrl}/auth/logout`, params)
+            .subscribe(() => {
+                this.clearAuthData();
+                this.router.navigateByUrl('/auth').then();
+            });
+    }
+
+    register(params): Observable<any> {
+        return this.http.post(`${this.apiUrl}/auth/register`, params).pipe(
+            tap(() => {
+                this.router.navigateByUrl('/').then();
+            })
+        );
+    }
+
+    resetPassword(params): Observable<any> {
+        return this.http.post(`${this.apiUrl}/auth/password/forgot`, params).pipe(
+            tap((authData: AuthData) => {
+                this.router.navigateByUrl('/auth').then();
+            })
+        );
+    }
+
+
     private setAuthData(token, permissions) {
-        console.log(token, permissions, 'setAuthData service');
         this.jwtService.setToken(token);
         this.jwtService.setPermissions(permissions);
     }
+
+    clearAuthData(navigate?: boolean) {
+        this.jwtService.clearToken();
+        this.jwtService.clearPermissions();
+
+        if (navigate) {
+            this.router.navigateByUrl('/auth').then();
+        }
+    }
+
 }

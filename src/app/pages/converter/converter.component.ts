@@ -10,9 +10,9 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ConverterComponent implements OnInit {
 
-    payway: PaywayModel[] = [];
-
-    selectedCurrencyFrom: number = 25;
+    payway: any;
+    rates = [];
+    selectedCurrencyFrom: number = 26;
     selectedCurrencyTo: number = 1;
 
 
@@ -30,32 +30,49 @@ export class ConverterComponent implements OnInit {
 
     ngOnInit() {
         this.route.data.subscribe(data => {
-            this.payway = data.paywayData;
-            console.log( this.payway , 'payway');
+            this.payway =  data.paywayData;
         });
+
+        this.createPaywayArr(this.payway.rates);
 
         this.initSelect();
     }
 
+    createPaywayArr(arr) {
+
+        let i = 0;
+
+        for (let key in arr) {
+            this.rates.push({
+                id: i,
+                code: key,
+                currency: arr[key]
+            });
+
+            i++;
+        };
+    }
+
     initSelect() {
-        this.payway.forEach((item) => {
+        this.rates.forEach((item) => {
+            // console.log(item, 'item');
             if (item.id === this.selectedCurrencyFrom) {
-                this.currencyFrom = item.currency.adjusted_rate_usd;
+                this.currencyFrom = item.currency;
             }
 
             if (item.id === this.selectedCurrencyTo) {
-                this.currencyTo = item.currency.adjusted_rate_usd;
+                this.currencyTo = item.currency;
             }
         });
     }
 
     selectCurrencyFrom(from) {
-        this.currencyFrom = from.currency.adjusted_rate_usd;
+        this.currencyFrom = from.currency;
         this.inputFrom =  this.inputTo *  this.currencyFrom / this.currencyTo;
     }
 
     selectCurrencyTo(to) {
-        this.currencyTo = to.currency.adjusted_rate_usd;
+        this.currencyTo = to.currency;
         this.inputTo = this.inputFrom * this.currencyTo / this.currencyFrom;
 
     }
