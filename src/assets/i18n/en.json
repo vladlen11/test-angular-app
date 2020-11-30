@@ -1,0 +1,23 @@
+{
+    "header": {
+        "logo": "LogoHuego"
+    },
+    "nav": {
+        "main": "Home",
+        "auth": "Authentication",
+        "profile": "Profile",
+        "blog": "Blog",
+        "visual": "Visualization",
+        "converter": "Currency converter",
+        "localization": "Localization",
+        "gallery": "Gallery",
+        "chat": "Chat",
+        "map": "Map"
+    },
+    "home": {
+        "title": "hello world"
+    },
+    "gallery": {
+        "title": "Gaaaaaaaaaalery"
+    }
+}

@@ -1,0 +1,88 @@
+<!--<section class="apply">-->
+    <!--<form class="form" [formGroup]="formGroup">-->
+
+        <!--<fieldset class="wrap" formGroupName="info">-->
+            <!--<div class="form__row">-->
+                <!--<label>Имя</label>-->
+                <!--<input type="text" formControlName="firstName">-->
+            <!--</div>-->
+
+            <!--<div class="form__row">-->
+                <!--<label>Фамилия</label>-->
+                <!--<input type="text" formControlName="lastName">-->
+            <!--</div>-->
+
+            <!--<div class="form__row">-->
+                <!--<label>Отчество</label>-->
+                <!--<input type="text" formControlName="patronymicName">-->
+            <!--</div>-->
+
+            <!--<div class="form__row">-->
+                <!--<label>Телефон</label>-->
+                <!--<ul class="form__row-arr" formArrayName="phones">-->
+                    <!--<li *ngFor="let phoneControl of formGroup.controls.info.controls.phones.controls; let i = index">-->
+                        <!--<input type="text" formControlName="{{i}}" >-->
+
+                        <!--<button class="btn-add-phone" (click)="addPhoneControl()">+</button>-->
+                        <!--<button class="btn-remove-phone" (click)="removePhoneControl(i)">-</button>-->
+                    <!--</li>-->
+
+                <!--</ul>-->
+            <!--</div>-->
+
+            <!--<div class="form__row">-->
+                <!--<label>МЫло</label>-->
+                <!--<input type="email" formControlName="email">-->
+            <!--</div>-->
+        <!--</fieldset>-->
+
+        <!--<fieldset class="wrap" formGroupName="auth">-->
+            <!--<div class="form__row">-->
+                <!--<label>Пароль</label>-->
+                <!--<input type="password" formControlName="password">-->
+            <!--</div>-->
+            <!--<div class="form__row">-->
+                <!--<label>Повторить Пароль</label>-->
+                <!--<input type="password" formControlName="confirmPass">-->
+            <!--</div>-->
+
+        <!--</fieldset>-->
+
+        <!--<fieldset class="wrap" formGroupName="all">-->
+            <!--<div class="form__row">-->
+                <!--<label>селект</label>-->
+                <!--<ng-select class="select_country"-->
+                           <!--id="country"-->
+                           <!--[searchable]="false"-->
+                           <!--[clearable]="false"-->
+                           <!--[items]="countries"-->
+                           <!--[placeholder]="'strana'"-->
+                           <!--bindLabel="name"-->
+                           <!--bindValue="id"-->
+                           <!--formControlName="selectInput"-->
+                <!--&gt;-->
+                <!--</ng-select>-->
+            <!--</div>-->
+            <!--<div class="form__row">-->
+                <!--<label>Файл</label>-->
+                <!--<input type="file">-->
+            <!--</div>-->
+            <!--<div class="form__row">-->
+                <!--<label>payway</label>-->
+                <!--<ul class="form__row-arr" formArrayName="payways">-->
+                    <!--<li *ngFor="let item of formGroup.controls.all.controls.payways.controls; let i = index">-->
+                        <!--<input type="text" formControlName="{{i}}"  [placeholder]="data[i].code" >-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</fieldset>-->
+
+    <!--</form>-->
+
+    <!--<hr/>-->
+
+    <!--<button class="btn-submit" (click)="onSubmit()">-->
+        <!--submit-->
+    <!--</button>-->
+
+<!--</section>-->

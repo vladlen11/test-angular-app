@@ -1,0 +1,41 @@
+.header {
+    background: #3f51b5;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .row {
+        max-width: 1170px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 32px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        margin: 0 20px;
+
+        a {
+            margin: 0 10px;
+            //color: #fff;
+            font-size: 12px;
+
+            &.active {
+                background: rebeccapurple;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<section class="blog">
+
+    <div class="blog__breadcrumbs">
+        <a routerLink="/">Home</a> >
+        <a routerLink="/blog">Blog</a> >
+        <p>{{blogPost.translations[0].title}}</p>
+    </div>
+
+    <div class="blog__post">
+        <h2 class="blog__post-title">
+            {{blogPost.translations[0].title}}
+        </h2>
+
+        <div class="blog__post-img">
+        <span class="placeholder">
+           <img src="assets/img/pages/image-19-9-placeholder.svg" alt="alt">
+        </span>
+
+            <span class="photo">
+            <img [src]="blogPost.thumbnail_image.src" alt="">
+        </span>
+        </div>
+    </div>
+
+
+
+</section>

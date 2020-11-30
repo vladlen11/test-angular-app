@@ -1,0 +1,30 @@
+.home {
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+
+    .buttons {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 100px auto;
+
+        a {
+            width: 33.333333%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            border: 1px solid cadetblue;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            text-decoration: none;
+
+            &:hover {
+                background: #c3cbd9;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<div class="category">
+    <button class="category__item" (click)="allCategory()" >
+        все категории
+    </button>
+    <button class="category__item" *ngFor="let item of categories" (click)="changeCategories(item.translations[0].id)">
+        {{item?.translations[0].title}}
+        {{item?.posts_count}}
+    </button>
+</div>
+
+<div class="blog__list">
+    <div class="blog__list-item"  *ngFor="let item of blog">
+        <a routerLink="{{item?.slug}}" class="item">
+            <span class="item__img">
+                <span class="placeholder">
+                    <img src="assets/img/pages/image-19-9-placeholder.svg" alt="alt">
+                </span>
+
+                <span class="photo">
+                    <img [src]="item?.thumbnail_image?.src" alt="">
+                </span>
+            </span>
+            <span class="item__title">
+                {{item.translations[0]?.title}}
+            </span>
+        </a>
+    </div>
+</div>
+
+<div class="pagination">
+
+    <button  (click)="prevPagination()">PREV</button>
+
+    <button
+            *ngFor="let in of [].constructor(totalPage), let i = index"
+            [class.active]="currentPage === i+1"
+            (click)="getCurrentPage(i+1)"
+    >
+        {{i+1}}
+    </button>
+
+    <button (click)="nextPagination()">NEXT</button>
+</div>

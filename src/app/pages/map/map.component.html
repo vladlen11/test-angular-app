@@ -1,0 +1,27 @@
+<main class="map">
+
+    <h2>MAAAAAAAAAAP</h2>
+
+    <section class="content">
+        <agm-map [latitude]="data?.map_latitude"
+                 [longitude]="data?.map_longitude"
+                 [styles]="mapStyles"
+                 [scrollwheel]="false"
+                 [gestureHandling]="'coopeative'"
+                 [zoom]="16">
+            <agm-marker
+                    *ngIf="windowWidth > 767"
+                    [latitude]="data?.map_latitude"
+                    [longitude]="data?.map_longitude"
+                    [iconUrl]="{ url: 'assets/img/icons/marker-desctop.svg',anchor: {x: data?.map_X_cord, y: data?.map_Y_cord}}"
+            ></agm-marker>
+            <agm-marker
+                    *ngIf="windowWidth <= 767"
+                    [latitude]="data?.map_latitude"
+                    [longitude]="data?.map_longitude"
+                    [iconUrl]="{ url: 'assets/img/icons/marker-mobile.svg',anchor: {x: data?.map_X_cord, y: data?.map_Y_cord}}"
+            ></agm-marker>
+        </agm-map>
+
+    </section>
+</main>

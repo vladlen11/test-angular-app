@@ -1,0 +1,23 @@
+<main class="main">
+  <section class="chat">
+      <ul>
+          <li *ngFor="let item of chat, let i = index" [id]="item.id">
+
+              <p class="name">{{item.id}} <b>{{item.userName}}:</b></p>
+              <p class="message">{{item.userMessage}}</p>
+          </li>
+      </ul>
+
+      <form class="form" (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+          <div class="form__row">
+              <input type="text" name="user" id="inputUser" ngModel placeholder="name">
+          </div>
+          <div class="form__row">
+              <textarea  name="message" id="inputMessage" ngModel placeholder="message"></textarea>
+          </div>
+          <div class="form__row">
+              <button type="submit">Send</button>
+          </div>
+      </form>
+  </section>
+</main>

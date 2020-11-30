@@ -1,0 +1,19 @@
+<main class="visualization">
+
+    <h2>GRAPH</h2>
+
+    <div class="visualization__tabs">
+        <button class="visualization__tabs-item" (click)="changeChart('pie')">Pie chart</button>
+        <button class="visualization__tabs-item" (click)="changeChart('bar')">Bar chart</button>
+        <button class="visualization__tabs-item" (click)="changeChart('line')">line chart</button>
+        <button class="visualization__tabs-item" (click)="changeChart('radar')">radar chart</button>
+    </div>
+
+    <div class="graph">
+        <div class="graph" #graph>
+            <div class="graph-container">
+                <canvas [id]="'graphId_0'" #canvas></canvas>
+            </div>
+        </div>
+    </div>
+</main>

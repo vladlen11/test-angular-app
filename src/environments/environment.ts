@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    api: {
+        baseUrl: 'https://profitchief-backend.demo.ukrohost.com/api',
+        fakeEnabled: true,
+    },
+    google: {
+        maps: {
+            key: 'AIzaSyAbUXoJH_FOWQbInq_exAVjJacwbACqswA',
+        },
+    },
 };
 
 /*

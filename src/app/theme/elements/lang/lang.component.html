@@ -1,0 +1,10 @@
+<ng-select [items]="langList"
+           class="select"
+           [class.blackText]="blackText"
+           bindLabel="name"
+           (change)="setLang()"
+           [searchable]="false"
+           [clearable]="false"
+           [ngModelOptions]="{standalone: true}"
+           [(ngModel)]="currentLang"
+></ng-select>

@@ -1,0 +1,62 @@
+<main class="converter">
+    <div class="row">
+        <form class="converter__form">
+            <div class="converter__form-col">
+                <div class="input-label">
+                    <label for="inputFrom">Currency from</label>
+                    <ng-select [items]="payway"
+                               bindLabel="code"
+                               bindValue="id"
+                               [(ngModel)]="selectedCurrencyFrom"
+                               (init)="selectCurrencyFrom($event)"
+                               (change)="selectCurrencyFrom($event)"
+                               name="currencyFrom"
+                    >
+                    </ng-select>
+
+                </div>
+
+                <div class="input-label">
+                    <label for="inputFrom">Amount from</label>
+                    <input type="text"
+                           id="inputFrom"
+                           name="inputFrom"
+                            [(ngModel)]="inputFrom"
+                            (ngModelChange)="onInputChange(true)"
+                    >
+                </div>
+            </div>
+            <div class="converter__form-col">
+                <div class="input-label">
+                    <label for="inputFrom">Currency to</label>
+                    <ng-select [items]="payway"
+                               name="currencyTo"
+                               bindLabel="code"
+                               bindValue="id"
+                               [(ngModel)]="selectedCurrencyTo"
+                               (init)="selectCurrencyTo($event)"
+                               (change)="selectCurrencyTo($event)"
+                    >
+                    </ng-select>
+                </div>
+
+                <div class="input-label">
+                    <label for="inputTo">Amount To</label>
+                    <input
+                            type="text"
+                            id="inputTo"
+                            name="inputTo"
+                            (keypress)="numberOnly($event)"
+                            [(ngModel)]="inputTo"
+                            (ngModelChange)="onInputChange(false)"
+
+                    >
+                </div>
+            </div>
+        </form>
+
+        <button class="btn-clear" (click)="clear()">
+            clear
+        </button>
+    </div>
+</main>

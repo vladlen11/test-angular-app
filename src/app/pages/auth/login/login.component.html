@@ -1,0 +1,26 @@
+<form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+    <h2 class="title">Login</h2>
+
+
+    <div class="input-label">
+        <input id="loginFormEmail" type="text" formControlName="email" placeholder="Email*"/>
+        <div class="input-underline"></div>
+
+    </div>
+
+    <div class="input-label">
+        <input id="loginFormPassword" type="password" formControlName="password" placeholder="Пароль*"/>
+        <div class="input-underline"></div>
+
+    </div>
+
+    <button class="btn-submit">
+        submit
+    </button>
+
+    <div class="form__buttons">
+        <a routerLink="/auth/recovery">Recover</a>
+        <a routerLink="/auth/register">Register</a>
+    </div>
+
+</form>

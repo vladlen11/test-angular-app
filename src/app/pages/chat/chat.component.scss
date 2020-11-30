@@ -1,0 +1,88 @@
+.main {
+    padding: 80px;
+
+    .chat {
+        ul {
+            border: 1px solid royalblue;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            max-height: 500px;
+            overflow-y: auto;
+            height: 500px;
+            padding: 10px;
+            box-sizing: border-box;
+
+
+            li {
+                border: 1px solid royalblue;
+                padding: 5px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+
+                &:hover {
+                    background: rosybrown;
+                }
+
+                .name {
+                    text-decoration: underline;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+
+
+        }
+
+
+        .form {
+            border: 1px solid royalblue;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+
+            &__row {
+                margin-bottom: 10px;
+
+                input {
+                    border: 1px solid royalblue;
+                    width: 200px;
+                    height: 30px;
+                    border-radius: 10px;
+                    padding: 0 15px;
+                    box-sizing: border-box;
+                }
+
+                textarea {
+                    width: 100%;
+                    border: 1px solid royalblue;
+                    height: 150px;
+                    border-radius: 10px;
+                    padding: 15px;
+                    box-sizing: border-box;
+                }
+                
+                button {
+                    width: 200px;
+                    height: 40px;
+                    border: 1px solid royalblue;
+                    background: royalblue;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

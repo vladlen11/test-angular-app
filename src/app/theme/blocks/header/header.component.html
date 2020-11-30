@@ -1,0 +1,26 @@
+<header class="header">
+
+    <div class="row">
+
+        <div class="logo">
+            {{'header.logo' | translate}}
+        </div>
+
+        <nav class="nav">
+            <a mat-raised-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> {{'nav.main' | translate}}</a>
+            <a mat-raised-button routerLink="/blog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.blog' | translate}}</a>
+            <a mat-raised-button routerLink="/converter" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.converter' | translate}}</a>
+            <a mat-raised-button routerLink="/auth" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.auth' | translate}}</a>
+            <a mat-raised-button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.profile' | translate}}</a>
+            <a mat-raised-button routerLink="/visualization" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.visual' | translate}}</a>
+            <a mat-raised-button routerLink="/gallery" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.gallery' | translate}}</a>
+            <a mat-raised-button routerLink="/chat" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.chat' | translate}}</a>
+            <a mat-raised-button routerLink="/map" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.map' | translate}}</a>
+        </nav>
+
+        <div class="lang">
+            <app-lang></app-lang>
+        </div>
+    </div>
+
+</header>

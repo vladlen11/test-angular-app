@@ -1,0 +1,114 @@
+<main class="profile">
+    <form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+        <fieldset class="wrap" formGroupName="info" *ngIf="step1">
+            <h2 class="title">Info</h2>
+            <div class="form__row">
+                <div class="avatar">
+                    <div class="photo">
+                        <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" alt="">
+                    </div>
+                    <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                    <button *ngIf="url" (click)="delete()" >delete</button>
+                </div>
+
+            </div>
+
+            <div class="form__row">
+                <input type="text" formControlName="id">
+            </div>
+            <div class="form__row">
+                <input type="email" formControlName="email" placeholder="email">
+            </div>
+            <div class="form__row">
+                <input type="name" formControlName="name" placeholder="name">
+            </div>
+            <div class="form__row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Birsday</mat-label>
+                    <input matInput [matDatepicker]="birthday">
+                    <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+                    <mat-datepicker #birthday></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="form__row">
+                <ng-select class="select_country"
+                           id="country"
+                           [searchable]="true"
+                           [clearable]="false"
+                           [items]="countries"
+                           [placeholder]="'страна'"
+                           bindLabel="name"
+                           bindValue="id"
+                           formControlName="country"
+
+                >
+                </ng-select>
+            </div>
+            <div class="form__row">
+                <input type="description" formControlName="description">
+            </div>
+            <div class="form__row">
+                <button class="next" (click)="nextStep('step2')"> next</button>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="wrap" formGroupName="socials" *ngIf="step2">
+            <h2 class="title">socials</h2>
+            <div class="form__row">
+                <input type="text" formControlName="facebook" placeholder="facebook">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="vk" placeholder="vk">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="twitter" placeholder="twitter">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="instagram" placeholder="instagram">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="githab" placeholder="githab">
+            </div>
+            <div class="form__row">
+                <button class="next" (click)="nextStep('step3')"> next</button>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="wrap" formGroupName="security" *ngIf="step3">
+            <h2 class="title">security</h2>
+            <div class="form__row">
+                <input type="text" formControlName="password" placeholder="password">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="new_password" placeholder="new password">
+            </div>
+            <div class="form__row">
+                <input type="text" formControlName="new_password_confirmation" placeholder="new password confirmation">
+            </div>
+            <div class="form__row">
+                <button class="next" (click)="nextStep('step4')"> next</button>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="wrap" formGroupName="checkboxes" *ngIf="step4">
+            <h2 class="title">notifications</h2>
+            <div class="form__row">
+                <input type="checkbox"  id="checkbox_1" formControlName="news" name="news">
+                <label for="checkbox_1">news</label>
+            </div>
+            <div class="form__row">
+                <input type="checkbox" id="checkbox_2" formControlName="promotion" name="promotion">
+                <label for="checkbox_2">promotion</label>
+            </div>
+
+            <div class="form__row">
+                <button type="submit">submit</button>
+            </div>
+
+        </fieldset>
+
+    </form>
+</main>

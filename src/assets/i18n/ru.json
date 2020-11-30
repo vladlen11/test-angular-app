@@ -1,0 +1,23 @@
+{
+    "header": {
+        "logo": "ЛогоХуёго"
+    },
+    "nav": {
+        "main": "Главная",
+        "auth": "Аутентификация",
+        "profile": "Профиль",
+        "blog": "Блог",
+        "visual": "Графики",
+        "converter": "Конвертер валют",
+        "localization": "Язык",
+        "gallery": "Галлерея",
+        "chat": "Чат",
+        "map": "Карта"
+    },
+    "home": {
+        "title": "hello лох"
+    },
+    "gallery": {
+        "title": "Gaaaaaaaaaalery"
+    }
+}

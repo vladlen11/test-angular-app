@@ -1,0 +1,19 @@
+.visualization {
+    padding: 80px;
+
+    &__tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid blanchedalmond;
+            padding: 10px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    }
+}

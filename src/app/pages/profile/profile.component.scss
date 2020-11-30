@@ -1,0 +1,68 @@
+.profile {
+    padding: 80px;
+
+    .form {
+        margin: 50px auto;
+        max-width: 600px;
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        &__row {
+            width: 100%;
+            margin-bottom: 16px;
+            display: flex;
+
+            .avatar {
+                width: 100%;
+
+                .photo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 75px;
+                    width: 75px;
+                    border-radius: 50%;
+
+                    overflow: hidden;
+                    border: 1px solid steelblue;
+                    margin: 10px auto;
+                }
+
+            }
+
+            input {
+                width: 100%;
+                border-radius: 5px;
+                height: 30px;
+                padding: 0 15px;
+                display: inline-block;
+                flex: 1;
+            }
+
+            ng-select {
+                width: 200px;
+            }
+
+            mat-form-field {
+                width: 100%;
+
+                //::ng-deep {
+                //    .mat-form-field-suffix {
+                //        width: 100%;
+                //        display: flex;
+                //    }
+                //
+                //    .mat-icon-button {
+                //        width: 100%;
+                //    }
+                //}
+
+
+            }
+        }
+    }
+}
