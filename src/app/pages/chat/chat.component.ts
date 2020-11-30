@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ChatModel} from '../../core/models/chat.models';
 import {ChatService} from '../../core/services/chat.service';
 import {BlogModel} from '../../core/models/blog';
@@ -9,7 +9,7 @@ import { interval } from 'rxjs';
     templateUrl: './chat.component.html',
     styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnDestroy {
 
     chat: ChatModel[] = [];
 
@@ -29,17 +29,26 @@ export class ChatComponent implements OnInit {
             this.chat = data.chatData;
         });
 
-        const subscription = interval(3000).subscribe(() => {
-            this.route.data.subscribe(data => {
-                this.chat = data.chatData;
-            });
+        this.createSubscription(true);
 
-            if (this.router.url !== '/chat') {
+
+    }
+    ngOnDestroy() {
+        this.createSubscription(false);
+    }
+
+    createSubscription(status) {
+
+        const subscription = interval(3000).subscribe(() => {
+            if (status) {
+                this.route.data.subscribe(data => {
+                    this.chat = data.chatData;
+                });
+            } else {
                 subscription.unsubscribe();
             }
         });
     }
-
 
     sendMessage(sendForm) {
         console.log(sendForm.value, 'sendForm');
