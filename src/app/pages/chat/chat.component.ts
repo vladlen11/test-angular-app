@@ -16,6 +16,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     message: any = [];
 
 
+    subscription;
 
     constructor(
         private router: Router,
@@ -29,25 +30,13 @@ export class ChatComponent implements OnInit, OnDestroy {
             this.chat = data.chatData;
         });
 
-        this.createSubscription(true);
-
+        this.subscription = interval(3000).subscribe(() => {
+              this.chat;
+        });
 
     }
     ngOnDestroy() {
-        this.createSubscription(false);
-    }
-
-    createSubscription(status) {
-
-        const subscription = interval(3000).subscribe(() => {
-            if (status) {
-                this.route.data.subscribe(data => {
-                    this.chat = data.chatData;
-                });
-            } else {
-                subscription.unsubscribe();
-            }
-        });
+        this.subscription.unsubscribe();
     }
 
     sendMessage(sendForm) {
