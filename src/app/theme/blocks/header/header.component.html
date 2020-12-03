@@ -1,30 +1,34 @@
-<header class="header">
 
-    <div class="row">
+<mat-toolbar  color="primary">
+    <header class="header">
 
-        <div class="logo">
-            {{'header.logo' | translate}}
+        <div class="row">
+
+            <div class="logo">
+                {{'header.logo' | translate}}
+            </div>
+
+            <nav class="nav">
+                <a mat-stroked-button color="primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> {{'nav.main' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/blog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.blog' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/converter" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.converter' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/auth" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.auth' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.profile' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/visualization" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.visual' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/gallery" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.gallery' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/chat" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.chat' | translate}}</a>
+                <a mat-stroked-button color="primary" routerLink="/map" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.map' | translate}}</a>
+            </nav>
+
+            <div class="lang">
+                <app-lang></app-lang>
+            </div>
+
+            <button mat-raised-button class="logout" *ngIf="authService.isSigned" (click)="logout()">
+                выйти
+            </button>
         </div>
 
-        <nav class="nav">
-            <a mat-raised-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> {{'nav.main' | translate}}</a>
-            <a mat-raised-button routerLink="/blog" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.blog' | translate}}</a>
-            <a mat-raised-button routerLink="/converter" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.converter' | translate}}</a>
-            <a mat-raised-button routerLink="/auth" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.auth' | translate}}</a>
-            <a mat-raised-button routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.profile' | translate}}</a>
-            <a mat-raised-button routerLink="/visualization" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.visual' | translate}}</a>
-            <a mat-raised-button routerLink="/gallery" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.gallery' | translate}}</a>
-            <a mat-raised-button routerLink="/chat" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.chat' | translate}}</a>
-            <a mat-raised-button routerLink="/map" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{'nav.map' | translate}}</a>
-        </nav>
+    </header>
 
-        <div class="lang">
-            <app-lang></app-lang>
-        </div>
-
-        <button mat-raised-button class="logout" *ngIf="authService.isSigned" (click)="logout()">
-            выйти
-        </button>
-    </div>
-
-</header>
+</mat-toolbar>

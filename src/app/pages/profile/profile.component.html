@@ -14,13 +14,22 @@
             </div>
 
             <div class="form__row">
-                <input type="text" formControlName="id">
+
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="id">
+                </mat-form-field>
             </div>
             <div class="form__row">
-                <input type="email" formControlName="email" placeholder="email">
+
+
+                <mat-form-field class="example-full-width">
+                    <input matInput type="email" formControlName="email" placeholder="email">
+                </mat-form-field>
             </div>
             <div class="form__row">
-                <input type="name" formControlName="name" placeholder="name">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="name" formControlName="name" placeholder="name">
+                </mat-form-field>
             </div>
             <div class="form__row">
                 <mat-form-field appearance="fill">
@@ -31,7 +40,7 @@
                 </mat-form-field>
             </div>
             <div class="form__row">
-                <ng-select class="select_country"
+                <ng-select matInput class="select_country"
                            id="country"
                            [searchable]="true"
                            [clearable]="false"
@@ -45,10 +54,13 @@
                 </ng-select>
             </div>
             <div class="form__row">
-                <input type="description" formControlName="description">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="description" formControlName="description">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <button class="next" (click)="nextStep('step2')"> next</button>
+                <button mat-stroked-button color="primary" class="next" (click)="nextStep('step2')"> next</button>
             </div>
 
         </fieldset>
@@ -56,22 +68,35 @@
         <fieldset class="wrap" formGroupName="socials" *ngIf="step2">
             <h2 class="title">socials</h2>
             <div class="form__row">
-                <input type="text" formControlName="facebook" placeholder="facebook">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="facebook" placeholder="facebook">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <input type="text" formControlName="vk" placeholder="vk">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="vk" placeholder="vk">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <input type="text" formControlName="twitter" placeholder="twitter">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="twitter" placeholder="twitter">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <input type="text" formControlName="instagram" placeholder="instagram">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="instagram" placeholder="instagram">
+                </mat-form-field>
             </div>
             <div class="form__row">
-                <input type="text" formControlName="githab" placeholder="githab">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="githab" placeholder="githab">
+                </mat-form-field>
             </div>
             <div class="form__row">
-                <button class="next" (click)="nextStep('step3')"> next</button>
+                <button mat-stroked-button color="primary"  class="next" (click)="nextStep('step3')"> next</button>
             </div>
 
         </fieldset>
@@ -79,33 +104,41 @@
         <fieldset class="wrap" formGroupName="security" *ngIf="step3">
             <h2 class="title">security</h2>
             <div class="form__row">
-                <input type="text" formControlName="password" placeholder="password">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="password" placeholder="password">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <input type="text" formControlName="new_password" placeholder="new password">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="new_password" placeholder="new password">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <input type="text" formControlName="new_password_confirmation" placeholder="new password confirmation">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" formControlName="new_password_confirmation" placeholder="new password confirmation">
+                </mat-form-field>
+
             </div>
             <div class="form__row">
-                <button class="next" (click)="nextStep('step4')"> next</button>
+                <button mat-stroked-button color="primary"  class="next" (click)="nextStep('step4')"> next</button>
             </div>
 
         </fieldset>
 
         <fieldset class="wrap" formGroupName="checkboxes" *ngIf="step4">
             <h2 class="title">notifications</h2>
+
             <div class="form__row">
-                <input type="checkbox"  id="checkbox_1" formControlName="news" name="news">
-                <label for="checkbox_1">news</label>
+                <mat-checkbox class="example-margin" id="checkbox_1" formControlName="news" name="news">news</mat-checkbox>
             </div>
             <div class="form__row">
-                <input type="checkbox" id="checkbox_2" formControlName="promotion" name="promotion">
-                <label for="checkbox_2">promotion</label>
+                <mat-checkbox class="example-margin"  id="checkbox_2" formControlName="promotion" name="promotion">promotion</mat-checkbox>
             </div>
 
             <div class="form__row">
-                <button type="submit">submit</button>
+                <button mat-stroked-button color="primary"  class="next" type="submit"> submit</button>
             </div>
 
         </fieldset>

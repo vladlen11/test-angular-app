@@ -12,7 +12,8 @@
         "localization": "Язык",
         "gallery": "Галлерея",
         "chat": "Чат",
-        "map": "Карта"
+        "map": "Карта",
+        "slider": "Слайдер"
     },
     "home": {
         "title": "hello лох"

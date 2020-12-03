@@ -11,7 +11,6 @@ export class LocalStorageService {
     }
 
     getItem(key: string) {
-        console.log(key, 'getItem' );
         if (!this.coreService.isBrowser) {
             return;
         }
@@ -26,7 +25,6 @@ export class LocalStorageService {
     }
 
     setItem(key: string, value: any): void {
-        console.log(key, value, 'setItem' );
         if (!this.coreService.isBrowser) {
             return;
         }

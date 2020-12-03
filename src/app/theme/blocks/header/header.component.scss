@@ -1,11 +1,15 @@
-.header {
-    background: #3f51b5;
+.mat-toolbar {
     height: 80px;
     display: flex;
     align-items: center;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+}
+.header {
+    display: flex;
+    align-items: center;
     width: 100%;
     .row {
         max-width: 1170px;
@@ -32,6 +36,7 @@
             margin: 0 10px;
             //color: #fff;
             font-size: 12px;
+            color: #fff;
 
             &.active {
                 background: rebeccapurple;

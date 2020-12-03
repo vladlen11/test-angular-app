@@ -12,7 +12,8 @@
         "localization": "Localization",
         "gallery": "Gallery",
         "chat": "Chat",
-        "map": "Map"
+        "map": "Map",
+        "slider": "Slider"
     },
     "home": {
         "title": "hello world"

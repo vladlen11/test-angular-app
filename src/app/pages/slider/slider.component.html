@@ -1,0 +1,64 @@
+<main class="slider">
+
+    <h2>slider</h2>
+
+    <div class="carousel">
+
+        <div class="carousel__item" *ngFor="let item of slides, let i = index" (click)="openModal(i+1)">
+            <div class="placeholder">
+                <img src="http://placehold.it/350x150/000000" alt="placeholder">
+            </div>
+
+            <div class="photo">
+                <img [src]="item?.img" alt="alt">
+            </div>
+
+            <div class="index">
+                {{i}}/{{slides.length}}
+            </div>
+        </div>
+    </div>
+
+    <div class="slider__buttons">
+        <button class="btn-slider prev" mat-stroked-button color="primary" (click)="changeSlide(-1)">
+            prev
+        </button>
+        <button class="btn-slider next" mat-stroked-button color="primary" (click)="changeSlide(1)">
+            next
+        </button>
+    </div>
+
+
+
+</main>
+
+<div class="modal" *ngIf="modal">
+    <div class="modal-container message">
+        <button class="close" (click)="closeModal()" mat-stroked-button color="primary">X</button>
+        <div class="modal-content">
+            <div class="carousel2">
+                <div class="carousel2__item" *ngFor="let item of slides, let i = index">
+                    <div class="placeholder">
+                        <img src="http://placehold.it/350x150/000000" alt="placeholder">
+                    </div>
+
+                    <div class="photo">
+                        <img [src]="item?.img" alt="alt">
+                    </div>
+
+                    <div class="index">
+                        {{i}}/{{slides.length}}
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn-slider prev" mat-stroked-button color="primary" (click)="changeSlideModal(-1)">
+                    prev
+                </button>
+                <button class="btn-slider next" mat-stroked-button color="primary" (click)="changeSlideModal(1)">
+                    next
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import {VisualizationComponent} from './visualization/visualization.component';
 import {ChatComponent} from './chat/chat.component';
 import {BlogResolver} from '../data/resolvers/blog.resolver';
 import {ChatResolver} from '../data/resolvers/chat.resolver';
+import {SliderComponent} from './slider/slider.component';
 
 const routes: Routes = [
     {
@@ -98,6 +99,16 @@ const routes: Routes = [
                 },
                 resolve: {
                     chatData: ChatResolver,
+                },
+            },
+            {
+                path: 'slider',
+                component: SliderComponent,
+                data: {
+                    slug: 'slider'
+                },
+                resolve: {
+                    blogData: BlogResolver,
                 },
             }
             // {

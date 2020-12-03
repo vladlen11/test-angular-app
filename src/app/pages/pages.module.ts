@@ -20,11 +20,15 @@ import { AgmCoreModule } from '@agm/core';
 import { environment } from '../../environments/environment';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
+import {
+    MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatNativeDateModule,
+    MatToolbarModule
+} from '@angular/material';
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { SliderComponent } from './slider/slider.component';
 
 
 
@@ -39,6 +43,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
         LocalizationComponent,
         GalleryComponent,
         ChatComponent,
+        SliderComponent,
     ],
     imports: [
         CommonModule,
@@ -57,6 +62,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
         MatFormFieldModule,
         MatNativeDateModule,
         MatInputModule,
+        MatToolbarModule,
+        MatCheckboxModule,
         TranslateModule
     ]
 })
